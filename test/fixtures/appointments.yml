@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date: 2013-05-11
+  starttime: 2013-05-11 17:43:52
+  endtime: 2013-05-11 17:43:52
+  person: 1
+
+two:
+  name: MyString
+  date: 2013-05-11
+  starttime: 2013-05-11 17:43:52
+  endtime: 2013-05-11 17:43:52
+  person: 1
