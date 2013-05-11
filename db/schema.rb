@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511215216) do
+ActiveRecord::Schema.define(:version => 20130511220541) do
 
   create_table "appointments", :force => true do |t|
     t.string   "name"
     t.date     "date"
     t.time     "starttime"
     t.time     "endtime"
-    t.integer  "person"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
