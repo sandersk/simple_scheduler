@@ -18,7 +18,7 @@
     <td><%= appointment.date %></td>
     <td><%= appointment.starttime %></td>
     <td><%= appointment.endtime %></td>
-    <td><%= appointment.person %></td>
+    <td><%= appointment.user_id %></td>
     <td><%= link_to 'Show', appointment %></td>
     <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
     <td><%= link_to 'Destroy', appointment, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
