@@ -1,9 +1,10 @@
 SimpleScheduler::Application.routes.draw do
+
+  get "/appointments/by_date/(:date)" => "appointments#bydate", :defaults => {:date => Date.today.to_s}
+
   resources :appointments
 
   resources :users
-
-  get "/appointments/by_date/:date" => "appointments#bydate"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
