@@ -12,17 +12,17 @@
 
 <p>
   <b>Starttime:</b>
-  <%= @appointment.starttime %>
+  <%= @appointment.starttime.strftime("%l:%M %p") %>
 </p>
 
 <p>
   <b>Endtime:</b>
-  <%= @appointment.endtime %>
+  <%= @appointment.endtime.strftime("%l:%M %p") %>
 </p>
 
 <p>
   <b>Person:</b>
-  <%= @appointment.user_id %>
+  <%= User.find(@appointment.user_id).person %>
 </p>
 
 
