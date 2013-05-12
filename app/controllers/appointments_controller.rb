@@ -37,6 +37,11 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
+  # GET /appointments/bydate/2013-05-12
+  def bydate
+
+  end
+
   # POST /appointments
   # POST /appointments.json
   def create
