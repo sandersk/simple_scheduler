@@ -39,7 +39,7 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/bydate/2013-05-12
   def bydate
-
+    @appointments = Appointment.by_date(params[:date])
   end
 
   # POST /appointments

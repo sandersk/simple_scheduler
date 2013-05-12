@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Appointment</th>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Person</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @appointments.each do |appointment| %>
+  <tr>
+    <td><%= appointment.name %></td>
+    <td><%= appointment.date %></td>
+    <td><%= appointment.starttime.strftime("%l:%M %p") %></td>
+    <td><%= appointment.endtime.strftime("%l:%M %p") %></td>
+    <td><%= User.find(appointment.user_id).person %></td>
+    <td><%= link_to 'Show', appointment %></td>
+    <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+    <td><%= link_to 'Destroy', appointment, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
