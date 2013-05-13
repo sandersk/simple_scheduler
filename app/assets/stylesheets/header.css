@@ -1,0 +1,13 @@
+div.app_header {
+ padding-bottom: 45px;
+ border-bottom: 1px solid red;;
+}
+
+div.app_header img {
+  float: left;
+  margin-right: 30px;
+}
+
+div.app_header h1 {
+  padding-top: 30px;
+}
