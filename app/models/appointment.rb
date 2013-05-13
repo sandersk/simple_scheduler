@@ -1,6 +1,7 @@
 class Appointment < ActiveRecord::Base
   validates_presence_of :date, :endtime, :name, :user_id, :starttime
   validate :no_time_conflict
+  validate :start_before_end
   # Add validation that start time must be before end time
   attr_accessible :date, :endtime, :name, :user_id, :starttime
 
@@ -21,6 +22,13 @@ class Appointment < ActiveRecord::Base
       unless ((starttime < appt.starttime) & (endtime < appt.starttime)) || ((starttime > appt.endtime) & (endtime > appt.endtime))
         errors.add(:starttime, "Appointment conflicts with appointment #{appt.name} from #{appt.starttime} to #{appt.endtime} on #{appt.date}")
       end
+    end
+  end
+
+  def start_before_end
+    # Check to make sure starttime is earlier than endtime
+    unless starttime <= endtime
+      errors.add(:endtime, "End time of meeting (#{endtime.strftime("%l:%M %p")}) is before start time of meeting (#{starttime.strftime("%l:%M %p")})")
     end
   end
 
