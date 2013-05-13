@@ -45,6 +45,13 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
+    # Before making record, tack on proper date from :date to :starttime and :endttime
+    params[:appointment]["starttime(1i)"] = params[:appointment]["date(1i)"]
+    params[:appointment]["starttime(2i)"] = params[:appointment]["date(2i)"]
+    params[:appointment]["starttime(3i)"] = params[:appointment]["date(3i)"]
+    params[:appointment]["endtime(1i)"] = params[:appointment]["date(1i)"]
+    params[:appointment]["endtime(2i)"] = params[:appointment]["date(2i)"]
+    params[:appointment]["endtime(3i)"] = params[:appointment]["date(3i)"]
     @appointment = Appointment.new(params[:appointment])
 
     respond_to do |format|

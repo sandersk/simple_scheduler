@@ -21,11 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :starttime %><br />
-    <%= f.time_select :starttime, :ampm => true %>
+    <%= f.time_select :starttime, :ampm => true, :ignore_date => true %>
   </div>
   <div class="field">
     <%= f.label :endtime %><br />
-    <%= f.time_select :endtime, :ampm => true %>
+    <%= f.time_select :endtime, :ampm => true, :ignore_date => true %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br />
