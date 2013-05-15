@@ -1,6 +1,9 @@
 SimpleScheduler::Application.routes.draw do
 
+  root :to => 'appointments#home'
+
   get "/appointments/by_date/(:date)" => "appointments#bydate", :defaults => {:date => Date.today.to_s}
+  post "/appointments/by_date/" => "appointments#bydate"
 
   resources :appointments
 

@@ -38,8 +38,16 @@ class AppointmentsController < ApplicationController
   end
 
   # GET /appointments/bydate/2013-05-12
+  # POST /appointments/bydate/ with Hash date param
   def bydate
-    @appointments = Appointment.by_date(params[:date])
+    # Accept date in two formats: hash {"date" => {"day" => 18, "year" => "2013", "month" => "05"} or string
+    if params["date"].class != String
+      # Assuming we have a hash; ToDo: better error handling
+      @date = "#{sprintf('%02d', params["date"]["year"])}-#{sprintf('%02d', params["date"]["month"])}-#{sprintf('%02d', params["date"]["day"])}"
+    else
+      @date = params["date"].to_s
+    end
+    @appointments = Appointment.by_date(@date)
   end
 
   # POST /appointments

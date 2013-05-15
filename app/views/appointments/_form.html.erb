@@ -30,6 +30,7 @@
   <div class="field">
     <%= f.label :user_id %><br />
     <%= f.select :user_id, available_users %><br />
+    <%= link_to "Add a New User", new_user_path %>
   </div>
   <div class="actions">
     <%= f.submit %>
